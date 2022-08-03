@@ -1,0 +1,17 @@
+<h1>Aïseu index</h1>
+<div class="card">
+  <% @items.each do |item| %>
+  <div class="card-front">
+    <%= item.photo %>
+  </div>
+  <div class="card-back">
+    <%= item.name %>
+    <%= item.flavor %>
+    <%= item.temp %>
+    <%= item.description %>
+  </div>
+  <% link_to item_path(item) do %>
+    <button class='btn-see'>See</button>
+  <% end %>
+  <% end %>
+</div>
