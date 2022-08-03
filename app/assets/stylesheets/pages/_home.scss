@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+header{
+  background-image: url('https://images.pexels.com/photos/8963453/pexels-photo-8963453.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 42vh;
+}
+
+header img{
+  width: 100%;
+  height: 42vh;
+}

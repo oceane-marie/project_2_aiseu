@@ -1,8 +1,24 @@
+
 .card{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.card-wrapper{
+  width: 300px;
+  height: 200px;
+  margin: 25px 0;
+}
+
+.card-wrap{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 .card-front img, .card-back{
@@ -15,20 +31,6 @@
   text-align: center;
   padding: 25px 0;
   transform: rotateY(180deg);
-}
-
-.card-wrapper{
-  width: 300px;
-  height: 200px;
-}
-
-.card-wrap{
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
 }
 
 .card-front, .card-back {

@@ -1,4 +1,7 @@
-<h1>Aïseu index</h1>
+<header>
+  <h1>Aïseu</h1>
+</header>
+
 <div class="card">
     <% @items.each do |item| %>
     <div class="card-wrapper">
@@ -13,9 +16,11 @@
           <p>Type: <em><%= item.temp %></em></p>
         </div>
         <%= item.description %>
-        <% link_to item_path(item) do %>
-          <button class='btn-see'>See</button>
-        <% end %>
+        <div class="button">
+          <%= link_to item_path(item) do %>
+            <button class='btn btn-see'>See</button>
+          <% end %>
+        </div>
       </div>
     </div>
     </div>
