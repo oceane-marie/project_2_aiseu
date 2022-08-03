@@ -1,17 +1,23 @@
 <h1>Aïseu index</h1>
 <div class="card">
-  <% @items.each do |item| %>
-  <div class="card-front">
-    <%= item.photo %>
-  </div>
-  <div class="card-back">
-    <%= item.name %>
-    <%= item.flavor %>
-    <%= item.temp %>
-    <%= item.description %>
-  </div>
-  <% link_to item_path(item) do %>
-    <button class='btn-see'>See</button>
-  <% end %>
-  <% end %>
+    <% @items.each do |item| %>
+    <div class="card-wrapper">
+    <div class="card-wrap">
+      <div class="card-front">
+        <%= image_tag item.photo, width: 300, height:200 %>
+      </div>
+      <div class="card-back">
+        <%= item.name %>
+        <div class='type'>
+          <p>Flavor: <em><%= item.flavor %></em></p>
+          <p>Type: <em><%= item.temp %></em></p>
+        </div>
+        <%= item.description %>
+        <% link_to item_path(item) do %>
+          <button class='btn-see'>See</button>
+        <% end %>
+      </div>
+    </div>
+    </div>
+    <% end %>
 </div>
