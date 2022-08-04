@@ -9,8 +9,8 @@ export default class extends Controller {
     event.preventDefault()
 
     this.tempcheckboxTargets.forEach((tempcheckboxTarget) => {
-    if (this.tempcheckboxTarget.checked) {
-      console.log('Hello if')
+    if (tempcheckboxTarget.checked) {
+      console.log('Hello if temp')
     }
       const url = `/?temp=${tempcheckboxTarget.value}`
       fetch(url, { headers: { 'Accept': 'text/plain' } })
@@ -24,6 +24,9 @@ export default class extends Controller {
   sortbyflavor(event) {
     event.preventDefault()
     this.flavorcheckboxTargets.forEach((flavorcheckboxTarget) => {
+      if (flavorcheckboxTarget.checked) {
+        console.log('Hello if flavor')
+      }
       console.log('Ciao')
         const url = `/?flavor=${flavorcheckboxTarget.value}`
         fetch(url, { headers: { 'Accept': 'text/plain' } })
