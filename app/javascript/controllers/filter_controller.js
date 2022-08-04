@@ -3,12 +3,15 @@ import { Controller } from "stimulus"
 console.log('Hello')
 
 export default class extends Controller {
-  static targets = [ "list", "tempcheckbox", "tempform", 'flavorform', 'flavorcheckbox'];
+  static targets = [ "list", "tempcheckbox", 'flavorcheckbox'];
 
   sortbytemp(event) {
     event.preventDefault()
-    this.tempcheckboxTargets.forEach((checkboxTarget) => {
-    const url = `/?temp=${checkboxTarget.value}`
+    this.tempcheckboxTargets.forEach((tempcheckboxTarget) => {
+      if (this.tempcheckboxTarget.checked) {
+        console.log('Hello if')
+      }
+      const url = `/?temp=${tempcheckboxTarget.value}`
       fetch(url, { headers: { 'Accept': 'text/plain' } })
         .then(response => response.text())
         .then((data) => {
@@ -19,15 +22,14 @@ export default class extends Controller {
 
   sortbyflavor(event) {
     event.preventDefault()
-    this.flavorcheckboxTargets.forEach((checkboxTarget) => {
-      if (checkboxTarget.checked) {
-        const url = `/?flavor=${checkboxTarget.value}`
+    this.flavorcheckboxTargets.forEach((flavorcheckboxTarget) => {
+      console.log('Ciao')
+        const url = `/?flavor=${flavorcheckboxTarget.value}`
         fetch(url, { headers: { 'Accept': 'text/plain' } })
           .then(response => response.text())
           .then((data) => {
           this.listTarget.outerHTML = data;
         })
-      }
     })
   }
 }

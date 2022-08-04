@@ -5,13 +5,14 @@ class ItemsController < ApplicationController
 
     # sort by temp
     if params[:temp].present?
-      @items = Item.where(temp: params[:temp])
+      @items = Item.where('temp ILIKE ?', "%#{params[:temp]}%")
     else
       @items = Item.all
     end
 
+    # sort by flavor
     if params[:flavor].present?
-      @items = Item.where(flavor: params[:flavor])
+      @items = Item.where('flavor ILIKE ?', "%#{params[:flavor]}%")
     else
       @items = Item.all
     end
@@ -19,7 +20,7 @@ class ItemsController < ApplicationController
      # ajax
      respond_to do |format|
       format.html
-      format.text { render partial: 'list.html', locals: { items: @items } }
+      format.text { render partial: 'list.html', locals: { items: @items }}
     end
   end
 

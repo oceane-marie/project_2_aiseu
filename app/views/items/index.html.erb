@@ -4,10 +4,10 @@
 
 <div data-controller="filter">
   <div class='nav right border-bottom'>
-    <%= form_with url: '/', id: "form-temp", class:"form", data:{ filter_target: 'tempform'}, remote: true, method: :get do |f| %>
+    <%= form_with url: '/', id: "form-temp", class:"form", remote: true, method: :get do |f| %>
       <div class="checkbox">
-        <%= f.label :temp, "iced" %>
         <%= check_box_tag :temp, 'iced', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>
+         <%= f.label :temp, "iced" %>
       </div>
       <div class="checkbox">
         <%= f.label :temp, "classic" %>
@@ -19,7 +19,7 @@
 <div class="ctr">
   <div class='nav side border-side'>
   <h3>Pick a flavor</h2>
-  <%= form_with url: '/', id: "form-flavor", class:"form", data:{ filter_target: 'flavorform'}, remote: true, method: :get do |f| %>
+  <%= form_with url: '/', id: "form-flavor", class:"form", remote: true, method: :get do |f| %>
       <div class="checkbox">
         <%= f.label :flavor, "chocolate" %>
         <%= check_box_tag :flavor, 'chocolate', false, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
