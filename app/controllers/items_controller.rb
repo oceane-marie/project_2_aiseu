@@ -9,17 +9,18 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
-    # ajax
-    # respond_to do |format|
-    #   format.html
-    #   format.text { render partial: 'list.html.erb', locals: { items: @items } }
-    # end
 
-    # if params[:flavor].present?
-    #   @items = Item.where(flavor: params[:flavor])
-    # else
-    #   @items = Item.all
-    # end
+    if params[:flavor].present?
+      @items = Item.where(flavor: params[:flavor])
+    else
+      @items = Item.all
+    end
+
+     # ajax
+     respond_to do |format|
+      format.html
+      format.text { render partial: 'list.html', locals: { items: @items } }
+    end
   end
 
   def show

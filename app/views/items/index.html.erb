@@ -3,8 +3,8 @@
 </header>
 
 <div data-controller="filter">
-<nav class='navbar'>
-  <%= form_with url: '/', id: "form-temp", class:"form", method: :get do |f| %>
+  <nav class='navbar'>
+    <%= form_with url: '/', id: "form-temp", class:"form", data:{ filter_target: 'tempform'}, method: :get do |f| %>
       <div class="checkbox">
         <%= f.label :temp, "iced" %>
         <%= check_box_tag :temp, 'iced', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>
@@ -14,32 +14,28 @@
         <%= check_box_tag :temp, 'classic', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>
       </div>
     <% end %>
+  </nav>
+
+  <nav class='navbar side'>
+  <%= form_with url: '/', id: "form-flavor", class:"form", data:{ filter_target: 'flavorform'}, method: :get do |f| %>
+      <div class="checkbox side">
+        <%= f.label :flavor, "chocolate" %>
+        <%= check_box_tag :flavor, 'chocolate', false, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+      </div>
+      <div class="checkbox side">
+        <%= f.label :flavor, "fruits" %>
+        <%= check_box_tag :flavor, 'fruits', false, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+      </div>
+      <div class="checkbox side">
+        <%= f.label :flavor, "nuts" %>
+        <%= check_box_tag :flavor, 'nuts', false, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+      </div>
+      <div class="checkbox side">
+        <%= f.label :flavor, "tea/coffe" %>
+        <%= check_box_tag :flavor, 'tea/coffee', false, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+      </div>
+    <% end %>
 </nav>
 
-<div data-filter-target="list">
-  <div class="card" >
-    <% @items.each do |item| %>
-    <div class="card-wrapper">
-    <div class="card-wrap">
-      <div class="card-front">
-        <%= image_tag item.photo, width: 300, height:200 %>
-      </div>
-      <div class="card-back">
-        <%= item.name %>
-        <div class='type'>
-          <p>Flavor: <em><%= item.flavor %></em></p>
-          <p>Type: <em><%= item.temp %></em></p>
-        </div>
-        <%= item.description %>
-        <div class="button">
-          <%= link_to item_path(item) do %>
-            <button class='btn btn-see'>See</button>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    </div>
-    <% end %>
-  </div>
-</div>
+  <%= render 'items/list', items: @items %>
 </div>
