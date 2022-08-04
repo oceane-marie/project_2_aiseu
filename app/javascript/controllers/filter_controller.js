@@ -7,10 +7,11 @@ export default class extends Controller {
 
   sortbytemp(event) {
     event.preventDefault()
+
     this.tempcheckboxTargets.forEach((tempcheckboxTarget) => {
-      if (this.tempcheckboxTarget.checked) {
-        console.log('Hello if')
-      }
+    if (this.tempcheckboxTarget.checked) {
+      console.log('Hello if')
+    }
       const url = `/?temp=${tempcheckboxTarget.value}`
       fetch(url, { headers: { 'Accept': 'text/plain' } })
         .then(response => response.text())
