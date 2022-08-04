@@ -2,7 +2,22 @@
   <h1>Aïseu</h1>
 </header>
 
-<div class="card">
+<div data-controller="filter">
+<nav class='navbar'>
+  <%= form_with url: '/', id: "form-temp", class:"form", method: :get do |f| %>
+      <div class="checkbox">
+        <%= f.label :temp, "iced" %>
+        <%= check_box_tag :temp, 'iced', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>
+      </div>
+      <div class="checkbox">
+        <%= f.label :temp, "classic" %>
+        <%= check_box_tag :temp, 'classic', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>
+      </div>
+    <% end %>
+</nav>
+
+<div data-filter-target="list">
+  <div class="card" >
     <% @items.each do |item| %>
     <div class="card-wrapper">
     <div class="card-wrap">
@@ -25,4 +40,6 @@
     </div>
     </div>
     <% end %>
+  </div>
+</div>
 </div>
