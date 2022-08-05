@@ -1,12 +1,22 @@
 .btn{
   border-radius: 12px;
-  color: #fff;
   text-align: center;
-  font-size: 21px;
   border: none;
   font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+}
+
+.white-little{
+  background-color: #fff;
+  font-size: 16px;
+  color: #fcd5ce;
+  padding: 4px 8px;
+  margin-top: 8px;
+}
+
+.white-little:hover{
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 2px 8px;
 }
 
 .purple-big{
@@ -14,11 +24,17 @@
   width: fit-content;
   display: inline-block;
   padding: 25px 35px;
+  font-size: 21px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .purple-big:hover{
-  background-color: #afb3f7b3;
+  background-color: transparent;
   color: #fff;
+  border: 2px solid #fff;
+  padding: 23px 35px
 }
 
 .btn-left{
