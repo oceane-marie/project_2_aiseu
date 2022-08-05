@@ -1,0 +1,26 @@
+.btn{
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+  font-size: 21px;
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.purple-big{
+  background-color: #afb3f7;
+  width: fit-content;
+  display: inline-block;
+  padding: 25px 35px;
+}
+
+.purple-big:hover{
+  background-color: #afb3f7b3;
+  color: #fff;
+}
+
+.btn-left{
+  float: left;
+}

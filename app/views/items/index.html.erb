@@ -1,10 +1,13 @@
 <header>
-  <h1>Aïseu</h1>
-  <button class='btn btn-scroll' id='btn-scroll'>Discover</button>
+  <div class='text-header'>
+    <h1>Aïseu</h1>
+    <h2>Vegan homemade mochi <br> delivered to your door</h2>
+  </div>
+  <button class='btn purple-big btn-left' id='btn-scroll'>Discover</button>
 </header>
 
 <div data-controller="filter">
-  <div class='nav right border-bottom'>
+  <div class='right h-150'>
     <%= form_with url: '/', id: "form-temp", class:"form", remote: true, method: :get do |f| %>
       <div class="checkbox">
         <%= check_box_tag :temp, 'iced', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>

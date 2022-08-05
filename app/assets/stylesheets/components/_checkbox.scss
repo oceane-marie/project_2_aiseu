@@ -1,31 +1,27 @@
-.checkbox {
-  display: inline-block;
+.checkbox input[type='checkbox'] {
+  opacity: 0;
+  left: -9999px;
+  position: absolute;
 }
 
-// .checkbox input[type='checkbox'] {
-//   opacity: 0;
-//   left: -9999px;
-//   position: absolute;
-// }
+.checkbox {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 11px 0px;
+  color: #fff;
+  background-color: #afb3f7;
+  margin-right: 12px;
+  margin-bottom: 16px;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+}
 
-// .checkbox {
-//   display: inline-block;
-//   border-radius: 50rem;
-//   padding: 11px 0px;
-//   background-color: #ECEAFF;
-//   color: #7E73FF;
-//   border: 1px solid #7E73FF;
-//   margin-right: 12px;
-//   margin-bottom: 16px;
-//   text-align: center;
-//   width: 150px;
-//   height: 50px;
-//   font-size: 16px;
-// }
-
-// .checkbox label{
-//   cursor: pointer;
-// }
+.checkbox label{
+  cursor: pointer;
+  font-family: 'Arima Madurai', cursive;;
+}
 
 // .checkbox input:checked{
 //   background-color: #7E73FF;
@@ -57,4 +53,6 @@
   display: flex;
   flex-direction: row;
   justify-content: right;
+  margin-top: 24px;
+  margin-right: 24px;
 }
