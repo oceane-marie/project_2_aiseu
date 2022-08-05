@@ -10,7 +10,7 @@
 <div class="nav-top h-150">
   <div class='nav-left'>
     <%= form_with url: '/', id: "form-temp", class:"form", remote: true, method: :get do |f| %>
-      <div class="checkbox">
+      <div class="checkbox margin-right">
         <%= check_box_tag :temp, 'iced', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>
          <%= f.label :temp, "iced" %>
       </div>
