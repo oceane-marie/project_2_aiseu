@@ -11,13 +11,13 @@ export default class extends Controller {
     this.tempcheckboxTargets.forEach((tempcheckboxTarget) => {
     if (tempcheckboxTarget.checked) {
       console.log('Hello if temp')
-    }
       const url = `/?temp=${tempcheckboxTarget.value}`
       fetch(url, { headers: { 'Accept': 'text/plain' } })
         .then(response => response.text())
         .then((data) => {
         this.listTarget.outerHTML = data;
       })
+    }
     })
   }
 
@@ -26,14 +26,13 @@ export default class extends Controller {
     this.flavorcheckboxTargets.forEach((flavorcheckboxTarget) => {
       if (flavorcheckboxTarget.checked) {
         console.log('Hello if flavor')
-      }
-      console.log('Ciao')
         const url = `/?flavor=${flavorcheckboxTarget.value}`
         fetch(url, { headers: { 'Accept': 'text/plain' } })
           .then(response => response.text())
           .then((data) => {
           this.listTarget.outerHTML = data;
         })
+      }
     })
   }
 }
