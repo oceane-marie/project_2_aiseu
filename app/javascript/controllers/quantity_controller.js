@@ -5,16 +5,13 @@ const qPLus = document.getElementById('plus')
 const qMinus = document.getElementById('minus')
 const price = document.getElementById('price')
 
-if (qPlus) {
   qPLus.addEventListener('click', () => {
     newQuantityPlus =  parseInt(quantity.innerText) + 1;
     quantity.innerText = newQuantityPlus;
     // newPricePlus = parseInt(quantity.innerText) * 1.20
     // price.innerText = newPricePlus.toFixed(2)
   })
-}
 
-if (qMinus) {
   qMinus.addEventListener('click', () => {
     newQuantityMinus = parseInt(quantity.innerText) - 1;
     if (quantity.innerText >= 1) {
@@ -29,5 +26,4 @@ if (qMinus) {
   //   price.innerText = newPriceMinus.toFixed(2)
   // }
   })
-}
 })
