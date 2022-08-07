@@ -8,8 +8,17 @@
 .white-little{
   background-color: #fff;
   font-size: 16px;
-  color: #fcd5ce;
   padding: 4px 8px;
+}
+
+
+// pink font for index
+.pink{
+  color: $pink;
+}
+// blue font for show
+.blue{
+  color: $blue;
 }
 
 .white-little:hover{

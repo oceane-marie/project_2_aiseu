@@ -11,8 +11,16 @@
 </div>
 
 <div class='ctr-mochi'>
-  <div class="card-mochi">
   <%= image_tag @item.photo, class:'bgd-show'%>
-
+  <div class="card-mochi">
+  <%= simple_form_for @item do |f| %>
+    <h2><%= @item.name %></h2>
+    <h4><%= @item.flavor %></h4>
+    <h4><%= @item.temp %></h4>
+    <p><%= @item.description %></p>
+    <h3 class='white'>Price: 1.20€</h3>
+    <i fa-solid fa-plus></i>1<i fa-solid fa-minus></i>
+    <%= f.button :submit, 'Buy', class:'btn white-little blue'%>
+  <% end %>
   </div>
 </div>

@@ -3,6 +3,18 @@
   background-position: center;
   background-size: cover;
   height: 87vh;
-  width: 100vw;
-  z-index: 0;
+  width: 60%;
+}
+
+.ctr-mochi{
+  display: flex;
+}
+
+@media (max-width: 760px) {
+  .bgd-show{
+    display: none;
+  }
+  .card-mochi{
+    width: 100%;
+  }
 }
