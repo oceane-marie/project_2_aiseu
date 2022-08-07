@@ -18,8 +18,11 @@
     <h4><%= @item.flavor %></h4>
     <h4><%= @item.temp %></h4>
     <p><%= @item.description %></p>
-    <h3 class='white'>Price: 1.20€</h3>
-    <i fa-solid fa-plus></i>1<i fa-solid fa-minus></i>
+    <h3 class='white'>Price: <span id='price'>1.20</span>€</h3>
+    <%# update quantity when click on + and reduce it when click on - (addEventListener on each i + =+1/ =-1 on innerHTML of quantity ) %>
+    <div class='d-flex'>
+      <i class='fa-solid fa-plus' id='plus'></i><p id='quantity'>1</p><i class='fa-solid fa-minus' id='minus'></i>
+    </div>
     <%= f.button :submit, 'Buy', class:'btn white-little blue'%>
   <% end %>
   </div>
