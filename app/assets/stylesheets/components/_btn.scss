@@ -5,26 +5,31 @@
   font-family: 'JetBrains Mono', monospace;
 }
 
-.white-little{
+.pink-little{
   background-color: #fff;
   font-size: 16px;
   padding: 4px 8px;
-}
-
-
-// pink font for index
-.pink{
   color: $pink;
 }
-// blue font for show
-.blue{
-  color: $blue;
-}
 
-.white-little:hover{
+.pink-little:hover{
   color: #fff;
   border: 2px solid #fff;
   padding: 2px 8px;
+}
+
+// blue font for show
+.blue-medium{
+  background-color: #fff;
+  font-size: 16px;
+  color: $blue;
+  padding: 12px 21px;
+}
+
+.blue-medium:hover{
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 19px;
 }
 
 .purple-big{
@@ -44,6 +49,18 @@
   color: #fff;
   border: 2px solid #fff;
   padding: 23px 35px
+}
+
+.purple-big:focus{
+  background-color: #afb3f7;
+  width: fit-content;
+  display: inline-block;
+  padding: 25px 35px;
+  font-size: 21px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 130px;
 }
 
 .purple-little{

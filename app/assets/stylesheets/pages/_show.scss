@@ -10,6 +10,17 @@
   display: flex;
 }
 
+// space btw item description and ordering
+.mt-70{
+  margin-top: 70px;
+}
+
+// space between each text
+.mt-21{
+  margin-top: 21px;
+}
+
+// display none img when smaller screen
 @media (max-width: 760px) {
   .bgd-show{
     display: none;

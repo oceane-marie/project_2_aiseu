@@ -89,11 +89,35 @@
   justify-content: center;
   text-align: left;
   padding: 0px 48px;
+  #title-card{
+    font-size: 32px;
+  }
+  #sub-card{
+    font-size: 21px;
+  }
+  #desc-card{
+    font-size: 18px;
+    padding-right: 12px;
+  }
   .white{
     color: $blue;
     background-color: #fff;
     border-radius: 12px;
     width: fit-content;
     padding: 12px;
+    &:hover{
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 10px;
+      background-color: $blue;
+    }
+  }
+  .fa-solid {
+    font-size: 16px;
+    margin: 8px 12px;
+  }
+  #quantity{
+    font-size: 18px;
+    margin: 8px 12px;
   }
 }

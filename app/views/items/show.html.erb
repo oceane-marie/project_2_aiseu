@@ -14,16 +14,18 @@
   <%= image_tag @item.photo, class:'bgd-show'%>
   <div class="card-mochi">
   <%= simple_form_for @item do |f| %>
-    <h2><%= @item.name %></h2>
-    <h4><%= @item.flavor %></h4>
-    <h4><%= @item.temp %></h4>
-    <p><%= @item.description %></p>
-    <h3 class='white'>Price: <span id='price'>1.20</span>€</h3>
+    <h3 id='title-card'><%= @item.name %></h3>
+    <div class="d-flex" id='sub-card'>
+      <h5 class='mt-21'>Flavor: <strong><%= @item.flavor %></strong></h5>
+      <h5 class='mx-4 mt-21'>Type: <strong><%= @item.temp %></strong></h5>
+    </div>
+    <p class='mt-21' id='desc-card'><%= @item.description %></p>
+    <h3 class='white mt-70'>Price: <span id='price'>1.20</span>€</h3>
     <%# update quantity when click on + and reduce it when click on - (addEventListener on each i + =+1/ =-1 on innerHTML of quantity ) %>
-    <div class='d-flex'>
+    <div class='d-flex white pb-0 mt-21'>
       <i class='fa-solid fa-plus' id='plus'></i><p id='quantity'>1</p><i class='fa-solid fa-minus' id='minus'></i>
     </div>
-    <%= f.button :submit, 'Buy', class:'btn white-little blue'%>
+    <%= f.button :submit, 'Buy', class:'btn blue-medium mt-21'%>
   <% end %>
   </div>
 </div>

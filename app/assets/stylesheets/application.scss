@@ -11,3 +11,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body{
+  background-color: #fff;
+  h1, h3{
+    font-family: 'JetBrains Mono', monospace;
+  }
+  h2, h5, p{
+    font-family: 'Arima Madurai', cursive;
+  }
+}
