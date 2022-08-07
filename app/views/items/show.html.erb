@@ -1,1 +1,18 @@
-<h1>Aïseu show</h1>
+<div class="nav-top">
+
+  <%= link_to root_path do %>
+    <button class='btn purple-little'>Return</button>
+  <% end %>
+  <h1>Aïseu</h1>
+  <div class="nav-right">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <i class="fa-solid fa-user"></i>
+  </div>
+</div>
+
+<div class='ctr-mochi'>
+  <div class="card-mochi">
+  <%= image_tag @item.photo, class:'bgd-show'%>
+
+  </div>
+</div>

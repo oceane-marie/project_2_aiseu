@@ -77,3 +77,12 @@
 .card-wrapper .card-wrap:hover {
   transform: rotateY(180deg);
 }
+
+
+// card mochi in show
+.card-mochi{
+  height: 50vh;
+  width: 45%;
+  background-color: #fff;
+  z-index: 1;
+}

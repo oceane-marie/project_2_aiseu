@@ -36,3 +36,22 @@
   border: 2px solid #fff;
   padding: 23px 35px
 }
+
+.purple-little{
+  background-color: #afb3f7;
+  width: fit-content;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.purple-little:hover{
+  background-color: transparent;
+  color: #afb3f7;
+  border: 2px solid #afb3f7;
+  padding: 8px 13px
+}
