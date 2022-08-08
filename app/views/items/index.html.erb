@@ -21,7 +21,9 @@
     <% end %>
   </div>
   <div class="nav-right">
-    <i class="fa-solid fa-cart-shopping"></i>
+    <%= link_to carts_path do %>
+      <i class="fa-solid fa-cart-shopping"></i>
+    <% end %>
     <i class="fa-solid fa-user"></i>
   </div>
 </div>
