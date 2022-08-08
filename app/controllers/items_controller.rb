@@ -30,20 +30,6 @@ class ItemsController < ApplicationController
 
     # new
     @order_item = OrderItem.new
-
-    # create
-    @order_item = OrderItem.new #(order_item_params)
-    @order_item.item = params[:item_id] # @item
-    if @order_item.save
-      redirect_to item_path(@item)
-    else
-      render :show
-    end
   end
 
-  private
-
-  def order_item_params
-    params.require(:order_item).permit(:quantity)
-  end
 end

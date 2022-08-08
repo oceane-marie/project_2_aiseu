@@ -2,9 +2,9 @@
 <div id="card-item">
 <%= @order_items.each do |order_item| %>
 <h3><%= order_item.item.name %></h3>
-  <%= form_with model: order_item do |f| %>
-    <%= f.number_field :quantity value: order_item.quantity.to_i%>
-    <%= f.submit 'Update cart' %>
+  <%= simple_form_for order_item do |f| %>
+    <%= f.integer :quantity %>
+    <%= f.button :submit, 'Update cart' %>
     <%= link_to 'Remove Items', order_item, method: :delete, remote: true %>
   <% end %>
   <%# <h2>Subtotal: <%= order_item.total %></h2>

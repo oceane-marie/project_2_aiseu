@@ -7,8 +7,8 @@ export default class extends Controller {
 
   get(event) {
     event.preventDefault()
-    console.log(event.target.value)
-    this.quantityTarget.innerText = event.target.value
+    console.log(target.value)
+    this.quantityTarget.innerText.value
     this.element.submit();
 }
 }

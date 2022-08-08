@@ -5,15 +5,17 @@
   <% end %>
   <h1>Aïseu</h1>
   <div class="nav-right">
+    <%= link_to carts_path do %>
     <i class="fa-solid fa-cart-shopping"></i>
+    <% end %>
     <i class="fa-solid fa-user"></i>
   </div>
 </div>
 
 <div class='ctr-mochi'>
   <%= image_tag @item.photo, class:'bgd-show'%>
-  <%# put controller before form %>
-  <div class="card-mochi" data-controller='value-quantity'>
+  <div class="card-mochi">
+  <%= simple_form_for [@item, @order_item] do |f| %>
     <h3 id='title-card'><%= @item.name %></h3>
     <div class="d-flex" id='sub-card'>
       <h5 class='mt-21'>Flavor: <strong><%= @item.flavor %></strong></h5>
@@ -21,9 +23,12 @@
     </div>
     <p class='mt-21' id='desc-card'><%= @item.description %></p>
     <h3 class='white mt-70'>Price: <span id='price'>1.20</span>€</h3>
-    <%= simple_form_for @item, data: {action: "submit->value-quantity#get"} do |f| %>
+
       <div class='d-flex white pb-0 mt-21'>
-        <i class='fa-solid fa-plus' id='plus'></i><p id='quantity', data-target='quantity'>1</p><i class='fa-solid fa-minus' id='minus'></i>
+        <%# <i class='fa-solid fa-plus' id='plus'></i> %>
+        <%# <p id='quantity', data-target='quantity'>1</p> %>
+        <%= f.input :quantity %>
+        <%# <i class='fa-solid fa-minus' id='minus'></i> %>
       </div>
       <%= f.button :submit, 'Buy', class:'btn blue-medium mt-21' %>
   <% end %>
