@@ -15,8 +15,8 @@
          <%= f.label :temp, "iced" %>
       </div>
       <div class="checkbox">
-        <%= f.label :temp, "classic" %>
         <%= check_box_tag :temp, 'classic', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>
+        <%= f.label :temp, "classic" %>
       </div>
     <% end %>
   </div>
@@ -34,19 +34,19 @@
   <%= form_with url: '/', id: "form-flavor", class:"form", remote: true, method: :get do |f| %>
       <div class="checkbox">
         <%= f.label :flavor, "chocolate" %>
-        <%= check_box_tag :flavor, 'chocolate', false, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+        <%= check_box_tag :flavor, 'chocolate', true, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
       </div>
       <div class="checkbox">
         <%= f.label :flavor, "fruits" %>
-        <%= check_box_tag :flavor, 'fruits', false, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+        <%= check_box_tag :flavor, 'fruits', true, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
       </div>
       <div class="checkbox">
         <%= f.label :flavor, "nuts" %>
-        <%= check_box_tag :flavor, 'nuts', false, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+        <%= check_box_tag :flavor, 'nuts', true, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
       </div>
       <div class="checkbox">
         <%= f.label :flavor, "tea/coffee" %>
-        <%= check_box_tag :flavor, 'tea/coffee', false, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+        <%= check_box_tag :flavor, 'tea/coffee', true, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
       </div>
     <% end %>
   </div>

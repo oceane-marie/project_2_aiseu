@@ -13,17 +13,17 @@ class OrderItemsController < ApplicationController
       raise
       render "items/show", status: :unprocessable_entity
     end
-    # session[:cart_id] = @cart.id
+    # session[:order_id] = @order.id
   end
 
   # def update
-  #   @order_item = @cart.order_items.find(params[:id])
+  #   @order_item = @order.order_items.find(params[:id])
   #   @order_item.update_attributes(order_params)
   #   @order_items = current_order.order_items
   # end
 
   # def destroy
-  #   @cart_item = @cart.order_items.find(params[:id])
+  #   @order_item = @order.order_items.find(params[:id])
   #   @order_item.destroy
   #   @order_items = current_order.order_items
   # end
@@ -35,6 +35,6 @@ class OrderItemsController < ApplicationController
   end
 
   # def set_order
-  #   @cart = current_order
+  #   @order = current_order
   # end
 end
