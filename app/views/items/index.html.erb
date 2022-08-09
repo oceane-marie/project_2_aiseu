@@ -9,14 +9,14 @@
 <div data-controller="filter">
 <div class="nav-top h-150">
   <div class='nav-left'>
-    <%= form_with url: '/', id: "form-temp", class:"form", remote: true, method: :get do |f| %>
-      <div class="checkbox margin-right">
-        <%= check_box_tag :temp, 'iced', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>
-         <%= f.label :temp, "iced" %>
+    <%= form_with url: '/', id: "form-temp", data: { action:"click->filter#sortbytemp" }, class:"form", remote: true, method: :get do |f| %>
+      <div class="checkbox margin-right" >
+        <%= f.label :temp, "iced", data: { filter_target: 'tempcheckbox' }%>
+        <%= check_box_tag :temp, 'iced' %>
       </div>
       <div class="checkbox">
-        <%= check_box_tag :temp, 'classic', false, data: { action: "change->filter#sortbytemp", filter_target: 'tempcheckbox' } %>
-        <%= f.label :temp, "classic" %>
+        <%= f.label :temp, "classic", data: { filter_target: 'tempcheckbox' } %>
+        <%= check_box_tag :temp, 'classic' %>
       </div>
     <% end %>
   </div>
@@ -31,22 +31,22 @@
 <div class="ctr">
   <div class='nav side border-side'>
   <h3>Pick a flavor</h2>
-  <%= form_with url: '/', id: "form-flavor", class:"form", remote: true, method: :get do |f| %>
+  <%= form_with url: '/', id: "form-flavor", data: { action: "click->filter#sortbyflavor" }, class:"form", remote: true, method: :get do |f| %>
       <div class="checkbox">
-        <%= f.label :flavor, "chocolate" %>
-        <%= check_box_tag :flavor, 'chocolate', true, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+        <%= f.label :flavor, "chocolate", data: { filter_target: 'flavorcheckbox' } %>
+        <%= check_box_tag :flavor, 'chocolate' %>
       </div>
       <div class="checkbox">
-        <%= f.label :flavor, "fruits" %>
-        <%= check_box_tag :flavor, 'fruits', true, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+        <%= f.label :flavor, "fruits", data: { filter_target: 'flavorcheckbox' } %>
+        <%= check_box_tag :flavor, 'fruits' %>
       </div>
       <div class="checkbox">
-        <%= f.label :flavor, "nuts" %>
-        <%= check_box_tag :flavor, 'nuts', true, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+        <%= f.label :flavor, "nuts", data: { filter_target: 'flavorcheckbox' } %>
+        <%= check_box_tag :flavor, 'nuts' %>
       </div>
       <div class="checkbox">
-        <%= f.label :flavor, "tea/coffee" %>
-        <%= check_box_tag :flavor, 'tea/coffee', true, data: { action: "change->filter#sortbyflavor", filter_target: 'flavorcheckbox' } %>
+        <%= f.label :flavor, "tea/coffee", data: { filter_target: 'flavorcheckbox' } %>
+        <%= check_box_tag :flavor, 'tea/coffee' %>
       </div>
     <% end %>
   </div>
