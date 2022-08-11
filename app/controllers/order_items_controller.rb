@@ -3,15 +3,20 @@ class OrderItemsController < ApplicationController
   # before_action :set_order
 
   def create
+    # @order = current_order
     @item = Item.find(params[:item_id])
+
     @order_item = OrderItem.new(order_params)
+
     @order_item.item = @item
 
+
     if @order_item.save
-      redirect_to carts_path
+      raise
+      redirect_to root
     else
       raise
-      render "items/show", status: :unprocessable_entity
+      render "items/show"
     end
     # session[:order_id] = @order.id
   end
@@ -31,7 +36,7 @@ class OrderItemsController < ApplicationController
   private
 
   def order_params
-    params.require(:order_item).permit(:quantity)
+    params.require(:order_item).permit(:quantity, :item_id)
   end
 
   # def set_order
