@@ -10,6 +10,8 @@ class OrderItemsController < ApplicationController
 
     @order_item.item = @item
 
+    # tip: if save doens't work use .save! to show where is the pb !!
+
     if @order_item.save
       redirect_to root_path
     else
