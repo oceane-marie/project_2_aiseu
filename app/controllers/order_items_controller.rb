@@ -10,12 +10,9 @@ class OrderItemsController < ApplicationController
 
     @order_item.item = @item
 
-
     if @order_item.save
-      raise
-      redirect_to root
+      redirect_to root_path
     else
-      raise
       render "items/show"
     end
     # session[:order_id] = @order.id
