@@ -7,7 +7,7 @@ class OrderItemsController < ApplicationController
     @order_item = OrderItem.new(order_params)
     @order_item.item = @item
     # tip: if save doens't work use .save! to show where is the pb !!
-    if @order_item.save
+    if @order_item.save!
       redirect_to item_path(@item)
     else
       render "items/show"
@@ -15,10 +15,9 @@ class OrderItemsController < ApplicationController
   end
 
   def create_order
-    # @order_item = OrderItem.find(@order_item.id)
+    @order_item = OrderItem.find(@order_item.id)
     @order = Order.new(order_item_id: @order_item.id)
-    # @order.order_item = @order_item
-    @order.save
+    @order.save!
   end
 
   # def update

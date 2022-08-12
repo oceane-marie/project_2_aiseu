@@ -1,16 +1,23 @@
 <h1>Shopping cart</h1>
-<div id="card-item">
-<%= @order_items.each do |order_item| %>
-<h3><%= order_item.item.name %></h3>
-  <%= simple_form_for order_item do |f| %>
-    <%= f.integer :quantity %>
-    <%= f.button :submit, 'Update cart' %>
-    <%= link_to 'Remove Items', order_item, method: :delete, remote: true %>
-  <% end %>
-  <%# <h2>Subtotal: <%= order_item.total %></h2>
-<% end %>
+<div>
 
-<h3>Total</h3>
-<%# <h2><%= current_order.subtotal %></h2></div>
+  <% if @order.empty? %>
+    <p>No items in cart.</p>
+  <% else %>
+    <% @order.each do |item| %>
+      <%= item.name %>
+    <% end %>
+  <% end %>
+
+</div>
+  <%# <%= simple_form_for order_item do |f| %>
+    <%# <%= f.integer :quantity %>
+    <%# <%= f.button :submit, 'Update cart' %>
+    <%# <%= link_to 'Remove Items', order_item, method: :delete, remote: true %>
+  <%# <% end %>
+  <%# Subtotal: <%= order_item.total %>
+
+<%# <h3>Total</h3> %>
+<%# <%= current_order.subtotal %>
 
 <%# stripe checkout %>
