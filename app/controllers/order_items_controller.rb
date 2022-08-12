@@ -1,23 +1,25 @@
 class OrderItemsController < ApplicationController
   skip_before_action :authenticate_user!
-  # before_action :set_order
+  after_action :create_order, only: [:create]
 
   def create
-    # @order = current_order
     @item = Item.find(params[:item_id])
-
     @order_item = OrderItem.new(order_params)
-
     @order_item.item = @item
-
     # tip: if save doens't work use .save! to show where is the pb !!
-
     if @order_item.save
-      redirect_to root_path
+      redirect_to item_path(@item)
     else
       render "items/show"
     end
-    # session[:order_id] = @order.id
+  end
+
+  def create_order
+    # @order_item = OrderItem.find(@order_item.id)
+    @order = Order.new(order_item_id: @order_item.id)
+    # @order.order_item = @order_item
+    @order.save!
+    raise
   end
 
   # def update
