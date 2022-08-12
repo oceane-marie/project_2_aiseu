@@ -1,7 +1,30 @@
-<div>
-<h1>Shopping cart</h1>
+<div class="nav-top">
+  <%= link_to root_path do %>
+    <button class='btn purple-little'>Return</button>
+  <% end %>
+  <h1>Aïseu</h1>
+  <div class="nav-right">
+    <%= link_to orders_path do %>
+    <i class="fa-solid fa-cart-shopping"></i>
+    <% end %>
+    <i class="fa-solid fa-user"></i>
+  </div>
+</div>
 
-<p>You have visited this site <%= pluralize @visit_count, 'time' %>.</p>
+
+
+<div>
+<h3 class='m-5'>Your cart</h3>
+
+<div class='m-5'>
+<% @orders.each do |order_item| %>
+  <p>name:<%= order_item.item.name %></p>
+  <p>id:<%= order_item.id %></p>
+  <p>quantity<%= order_item.quantity %></p>
+<% end %>
+</div>
+
+<p class='m-5'>You have visited this site <%= pluralize @visit_count, 'time' %>.</p>
   <%# <% if @order.empty? %>
     <%# <p>No items in cart.</p> %>
   <%# <% else %>

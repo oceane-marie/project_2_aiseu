@@ -6,6 +6,8 @@ class OrdersController < ApplicationController
     session[:visit_count] += 1 # increment
     @visit_count = session[:visit_count]
 
+    @orders = [] << OrderItem.find(session[:order])
+
     # if user_signed_in?
     #   @order = Order.where(user_id: current_user)
     # else
