@@ -18,8 +18,7 @@ class OrderItemsController < ApplicationController
     # @order_item = OrderItem.find(@order_item.id)
     @order = Order.new(order_item_id: @order_item.id)
     # @order.order_item = @order_item
-    @order.save!
-    raise
+    @order.save
   end
 
   # def update
