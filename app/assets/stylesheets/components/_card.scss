@@ -116,8 +116,19 @@
     font-size: 16px;
     margin: 8px 12px;
   }
-  #quantity{
-    font-size: 18px;
-    margin: 8px 12px;
+  label {
+    display: none;
+  }
+  .order_item_quantity{
+    margin: 4px 8px;
+  }
+  #order_item_quantity{
+    margin-bottom: 0;
+    background-color: #fff;
+    border: 1px solid $blue;
+  }
+  h6{
+    margin: 0px;
+    color: $blue;
   }
 }

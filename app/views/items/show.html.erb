@@ -23,11 +23,11 @@
     <p class='mt-21' id='desc-card'><%= @item.description %></p>
     <h3 class='white mt-70'>Price: <span id='price'>1.20</span>€</h3>
     <%= simple_form_for [@item, @order_item] do |f| %>
-      <%# <div class='d-flex white pb-0 mt-21'> %>
-      <%= f.hidden_field :item_id, as: :hidden, value: @item.id %>
-      <%= f.input :quantity, as: :select, collection: 1..12 %>
-      <%# </div> %>
-      <%= f.button :submit, class:'btn blue-medium mt-21' %>
+      <div class='d-flex white pb-0 mt-21'>
+        <%= f.hidden_field :item_id, as: :hidden, value: @item.id %>
+        <h6><%= f.input :quantity, as: :select, collection: 1..12 %></h6>
+      </div>
+      <%= f.button :submit, 'Add',class:'btn blue-medium mt-21' %>
   <% end %>
   </div>
 </div>

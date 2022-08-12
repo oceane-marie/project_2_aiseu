@@ -15,10 +15,14 @@
 
 body{
   background-color: #fff;
-  h1, h3{
+  h1, h3, h6{
     font-family: 'JetBrains Mono', monospace;
   }
   h2, h5, p{
     font-family: 'Arima Madurai', cursive;
+  }
+  a {
+    color: black;
+    text-decoration: none;
   }
 }
