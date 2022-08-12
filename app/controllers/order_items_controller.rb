@@ -1,6 +1,6 @@
 class OrderItemsController < ApplicationController
   skip_before_action :authenticate_user!
-  after_action :create_order, only: [:create]
+  after_action :create_order, only: :create
 
   def create
     @item = Item.find(params[:item_id])

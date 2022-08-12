@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     else
       if session[:order]
         @order = Order.find(session[:order])
-        @order_items = @order.order_items
+        # @order_items = @order.where(order_item_id: @order_item)
       else
         @order = Order.create
         session[:order] = @order.id
