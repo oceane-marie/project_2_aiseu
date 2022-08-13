@@ -7,7 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning database...'
+OrderItem.destroy_all
+Order.destroy_all
 Item.destroy_all
+
 
 puts 'Creating iced mochi...'
 Item.create!(name: "Choc'chi", description: 'Our delicious mochi filled with our homemade dark chocolate sorbet', temp: 'iced', flavor: 'chocolate', photo:'https://images.unsplash.com/photo-1469428946640-844b286ebf50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')
