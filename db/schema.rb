@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_13_085400) do
+ActiveRecord::Schema.define(version: 2022_08_15_091109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 2022_08_13_085400) do
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "order_id"
+    t.bigint "user_id"
     t.index ["item_id"], name: "index_order_items_on_item_id"
-    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["user_id"], name: "index_order_items_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -58,5 +58,5 @@ ActiveRecord::Schema.define(version: 2022_08_13_085400) do
   end
 
   add_foreign_key "order_items", "items"
-  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "orders", column: "user_id"
 end

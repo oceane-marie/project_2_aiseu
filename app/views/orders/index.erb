@@ -1,4 +1,4 @@
-<div class="nav-top">
+<%# <div class="nav-top">
   <%= link_to root_path do %>
     <button class='btn purple-little'>Return</button>
   <% end %>
@@ -17,7 +17,7 @@
 <h3 class='m-5'>Your cart</h3>
 
 <div class='m-5'>
-<% @orders.each do |order_item| %>
+<% @order_items.each do |order_item| %>
   <p>name:<%= order_item.item.name %></p>
   <p>id:<%= order_item.id %></p>
   <p>quantity<%= order_item.quantity %></p>
@@ -33,7 +33,7 @@
     <%# <% end %>
   <%# <% end %>
 
-</div>
+</div> %>
   <%# <%= simple_form_for order_item do |f| %>
     <%# <%= f.integer :quantity %>
     <%# <%= f.button :submit, 'Update cart' %>

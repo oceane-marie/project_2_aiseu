@@ -1,23 +1,20 @@
 class OrderItemsController < ApplicationController
   skip_before_action :authenticate_user!
-  after_action :create_order, only: :create
 
   def create
     @item = Item.find(params[:item_id])
     @order_item = OrderItem.new(order_params)
-    @order_item.item = @item
+    @order_item.user_id = current_user.id
+
     # tip: if save doens't work use .save! to show where is the pb !!
-    if @order_item.save!
+    if user_signed_in?
+      @order_item.save!
+      raise
       redirect_to item_path(@item)
     else
-      render "items/show"
+      redirect_to new_user_session_path
+      @order_item.save!
     end
-  end
-
-  def create_order
-    @order_item = OrderItem.find(@order_item.id)
-    @order = Order.new(order_item_id: @order_item.id)
-    @order.save!
   end
 
   # def update
@@ -37,6 +34,17 @@ class OrderItemsController < ApplicationController
   def order_params
     params.require(:order_item).permit(:quantity, :item_id)
   end
+
+  # def create_order
+  #   @order_item = OrderItem.find(@order_item.id)
+  #   @order = Order.new(order_item_id: @order_item.id)
+  #   @order.save!
+  # end
+
+  # def current_user
+  #   @current_user ||= session[:current_user_id] &&
+  #                     User.find_by(id: session[:current_user_id])
+  # end
 
   # def set_order
   #   @order = current_order
