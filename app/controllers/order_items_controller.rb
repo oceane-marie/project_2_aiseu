@@ -5,7 +5,6 @@ class OrderItemsController < ApplicationController
     @item = Item.find(params[:item_id])
     @order_item = OrderItem.new(order_params)
     @order_item.user_id = current_user.id
-
     # tip: if save doens't work use .save! to show where is the pb !!
     if user_signed_in?
       @order_item.save!
