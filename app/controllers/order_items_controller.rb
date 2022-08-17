@@ -8,7 +8,6 @@ class OrderItemsController < ApplicationController
     # tip: if save doens't work use .save! to show where is the pb !!
     if user_signed_in?
       @order_item.save!
-      raise
       redirect_to item_path(@item)
     else
       redirect_to new_user_session_path
