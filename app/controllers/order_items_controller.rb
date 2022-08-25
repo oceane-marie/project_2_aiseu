@@ -1,18 +1,37 @@
 class OrderItemsController < ApplicationController
   skip_before_action :authenticate_user!
+  # before_action :current_order
 
   def create
     @item = Item.find(params[:item_id])
-    @order_item = OrderItem.new(order_params)
-    @order_item.user_id = current_user.id
-    # tip: if save doens't work use .save! to show where is the pb !!
-    if user_signed_in?
-      @order_item.save!
-      redirect_to item_path(@item)
-    else
-      redirect_to new_user_session_path
-      @order_item.save!
+
+    #create an order
+    unless @order
+      if current_user
+        order = current_user.order || Order.create(user: current_user)
+        @order = order
+      elsif session[:order_id]
+        @order = Order.where(id: session[:order_id]).first || Order.create
+      else
+        @order = Order.create
+        @order_item = OrderItem.new(order_params)
+        @order_item.order_id = @order.id
+        if @order_item.save!
+          redirect_to item_path(@item)
+        end
+      end
     end
+
+    # tip: if save doens't work use .save! to show where is the pb !!
+
+
+    # if user_signed_in?
+    #   @order_item.save!
+    #   redirect_to item_path(@item)
+    # else
+    #   redirect_to new_user_session_path
+    #   @order_item.save!
+    # end
   end
 
   # def update
@@ -32,19 +51,4 @@ class OrderItemsController < ApplicationController
   def order_params
     params.require(:order_item).permit(:quantity, :item_id)
   end
-
-  # def create_order
-  #   @order_item = OrderItem.find(@order_item.id)
-  #   @order = Order.new(order_item_id: @order_item.id)
-  #   @order.save!
-  # end
-
-  # def current_user
-  #   @current_user ||= session[:current_user_id] &&
-  #                     User.find_by(id: session[:current_user_id])
-  # end
-
-  # def set_order
-  #   @order = current_order
-  # end
 end

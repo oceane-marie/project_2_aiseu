@@ -132,3 +132,33 @@
     color: $blue;
   }
 }
+
+.cart{
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-cart{
+  background-color: $purple;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 12px;
+  padding: 8px;
+  width: 50%;
+}
+
+.card-cart-item{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border: #fff solid 2px;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 24px;
+}
+
+.cart-buy{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

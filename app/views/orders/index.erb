@@ -1,28 +1,61 @@
-<div class="nav-top">
-  <%= link_to root_path do %>
-    <button class='btn purple-little'>Return</button>
-  <% end %>
-  <h1>Aïseu</h1>
-  <div class="nav-right">
-    <%= link_to orders_path do %>
-    <i class="fa-solid fa-cart-shopping"></i>
+<div>
+  <div class="nav-top">
+    <%= link_to root_path do %>
+      <button class='btn purple-little'>Return</button>
     <% end %>
-    <i class="fa-solid fa-user"></i>
+    <h1>Aïseu</h1>
+    <div class="nav-right">
+      <%= link_to orders_path do %>
+      <i class="fa-solid fa-cart-shopping"></i>
+      <% end %>
+      <i class="fa-solid fa-user"></i>
+    </div>
+  </div>
+
+<div class="cart">
+  <div class="card-cart">
+    <div class="card-cart-item">
+      <h3>Chi'go</h3>
+      <p>Quantity: 5</p>
+      <p>Price: 6€</p>
+    </div>
+    <div class="card-cart-item">
+      <h3>Yu'chi</h3>
+      <p>quantity: 7</p>
+      <p>Price: 8,40€</p>
+    </div>
+    <div class="card-cart-item">
+      <h3>Pat'chi</h3>
+      <p>quantity: 3</p>
+      <p>Price: 3,60€</p>
+    </div>
+    <div class="card-cart-item">
+      <h3>Mang'chi</h3>
+      <p>quantity: 2</p>
+      <p>Price: 3€</p>
+    </div>
+  </div>
+  <div class="cart-buy">
+    <div class="total">
+      <h3>Total: 21€</h3>
+    </div>
+    <div class="checkout">
+      <button class='btn'>Checkout</button>
+    </div>
   </div>
 </div>
 
 
-
 <div>
-<h3 class='m-5'>Your cart</h3>
+<%# <h3 class='m-5'>Your cart</h3> %>
 
-<div class='m-5'>
-<% @order_items.each do |order_item| %>
-  <p>name:<%= order_item.item.name %></p>
-  <p>id:<%= order_item.id %></p>
-  <p>quantity<%= order_item.quantity %></p>
-<% end %>
-</div>
+<%# <div class='m-5'> %>
+<%# <% @orders.each do |order_item| %>
+  <%# <p>name:<%= order_item.item.name %></p>
+  <%# <p>id:<%= order_item.id %></p>
+  <%# <p>quantity<%= order_item.quantity %></p>
+<%# <% end %>
+<%# </div> %>
 
 <p class='m-5'>You have visited this site <%= pluralize @visit_count, 'time' %>.</p>
   <%# <% if @order.empty? %>
